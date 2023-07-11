@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(187, 182, 182);
+}
+ul{
+    position: relative;
+    transform: skewY(-25deg);
+}
+li{
+    position: absolute;
+    list-style: none;
+    top: 0;
+    transform: translate(calc(var(--i)*40px),calc(var(--i)*40px));
+    width: 100px;
+    padding: 15px;
+    background: rgb(67, 67, 67);
+    transition: 0.5s;
+    letter-spacing: -1px;
+}
+li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    background: rgb(71, 69, 69);
+    width: 40px;
+    height: 100%;
+    left: -40px;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+li:hover::before{
+    background: var(--clr);
+    filter: brightness(0.8);
+    
+}
+li::after{
+    content: attr(data-text);
+    position: absolute;
+    top: -39px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgb(60, 59, 59);
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    box-shadow: -120px 120px 20px rgb(115, 115, 115);
+    transition: 0.5s;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    left: 0.05em;
+    padding-left: 9px;
+    box-sizing: border-box;
+    color: var(--clr);
+   
+}
+li:hover{
+    background: var(--clr);
+    top: -60px;
+    
+    /* transform: translateY(30px); */
+}
+li:hover::after{
+    background: var(--clr);
+    color: white;
+    box-shadow: -170px 170px 20px rgb(115, 115, 115);
+}
+li a:hover::after{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: transparent;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    transition: 0.5s;
+}
+li:hover a{
+    color: white;
+}
+span{
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    text-align: center;
+    height: 100%;
+    color: var(--clr);
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
+li:hover span{
+    color: white;
+}
